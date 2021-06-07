@@ -1,0 +1,14 @@
+Instalar um pacote apenas para o ambiente de produção
+npm install --save-dev nodemon
+
+Agrupar rotas
+npm install  consign
+
+Converter envios para um texto que possa ser entendido
+npm install body-parser
+
+Mysql
+npm install mysql
+
+Horarios/datas
+npm install moment
