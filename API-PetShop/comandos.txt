@@ -1,0 +1,2 @@
+Criar tabela
+node .\api\banco-de-dados\criarTabelas.js
