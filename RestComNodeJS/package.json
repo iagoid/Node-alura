@@ -9,22 +9,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iagoid/Node-alura.git"
+    "url": "git+https://github.com/juunegreiros/nodejs-api-rest.git"
   },
-  "author": "Iago Ivanir Dalmolin",
+  "author": "juliana negreiros",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iagoid/Node-alura/issues"
+    "url": "https://github.com/juunegreiros/nodejs-api-rest/issues"
   },
-  "homepage": "https://github.com/iagoid/Node-alura#readme",
+  "homepage": "https://github.com/juunegreiros/nodejs-api-rest#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "axios": "^0.19.1",
     "consign": "^0.1.6",
     "express": "^4.17.1",
-    "moment": "^2.29.1",
-    "mysql": "^2.18.1"
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^1.19.2"
   }
 }
