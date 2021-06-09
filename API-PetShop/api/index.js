@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const config = require('config')
+const roteadorv2 = require('./rotas/fornecedores/rotas.v2')
 const roteador = require('./rotas/fornecedores')
 const NaoEncontrado = require('./erros/NaoEncontrado')
 const CampoInvalido = require('./erros/CampoInvalido')
@@ -13,6 +14,8 @@ const SerializadorErro = require('./Serializador').SerializadorErro
 app.use(bodyParser.json())
 
 app.use((req, res, proximo) => {
+    res.set('X-Powered-By', 'Iago Ivanir Dalmolin')
+
     let formatoRequisitado = req.header('Accept')
 
     if(formatoRequisitado === '*/*'){
@@ -29,7 +32,16 @@ app.use((req, res, proximo) => {
     proximo()
 })
 
+// Define uais sites podem acessar a API
+// Devemos colar a url do site ou um *(todo os sites)
+app.use((req, res, proximo) => {
+    res.set('Access-Control-Allow-Origin', '*')
+    proximo()
+})
+
 app.use('/api/fornecedores', roteador)
+
+app.use('/api/v2/fornecedores', roteadorv2)
 
 app.use((erro, req, res, proximo) => {
     let status = 500
